@@ -13,17 +13,34 @@
         }
 
         body {
-            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             min-height: 100vh;
             padding: 20px 15px;
             line-height: 1.47059;
             font-weight: 400;
             letter-spacing: -0.022em;
+            position: relative;
+            overflow-x: hidden;
         }
 
-        /* 苹果风格顶部导航 */
+        /* 科技感背景网格 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+
+        /* 暗黑科技风导航 */
         .navbar {
-            background: rgba(255, 255, 255, 0.72);
+            background: rgba(30, 30, 50, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-radius: 20px;
@@ -32,8 +49,8 @@
             position: sticky;
             top: 12px;
             z-index: 100;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 30px rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.15);
         }
 
         .nav-links {
@@ -45,17 +62,18 @@
         }
 
         .nav-links a {
-            color: #1d1d1f;
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
             padding: 8px 16px;
             border-radius: 12px;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
         }
 
         .nav-links a:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(0, 212, 255, 0.15);
+            color: #00d4ff;
         }
 
         /* 主容器 */
@@ -67,7 +85,7 @@
         /* 标题区域 */
         .hero {
             text-align: center;
-            color: #1d1d1f;
+            color: #ffffff;
             margin-bottom: 48px;
         }
 
@@ -76,38 +94,48 @@
             font-weight: 700;
             margin-bottom: 12px;
             letter-spacing: -0.03em;
+            background: linear-gradient(90deg, #ffffff 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #86868b;
+            color: #a0a0b0;
             font-weight: 400;
         }
 
-        /* 苹果风格通用卡片 */
+        /* 通用卡片样式 */
         .card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(30, 30, 50, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-radius: 20px;
             padding: 32px;
             margin-bottom: 24px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.15);
         }
 
         .card h2 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 28px;
-            color: #1d1d1f;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 10px;
             letter-spacing: -0.02em;
         }
 
-        /* 价格套餐 - 苹果风格 */
+        /* 价格套餐 */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -115,42 +143,45 @@
         }
 
         .price-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(40, 40, 60, 0.5);
             border-radius: 16px;
             padding: 28px 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
 
         .price-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border-color: #00d4ff;
+            box-shadow: 0 16px 40px rgba(0, 212, 255, 0.2);
         }
 
         .price-card h3 {
             font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 16px;
-            color: #1d1d1f;
+            color: #ffffff;
         }
 
         .price {
             font-size: 2.8rem;
             font-weight: 700;
-            color: #0071e3;
+            color: #00d4ff;
             margin-bottom: 8px;
             letter-spacing: -0.03em;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
 
         .price span {
             font-size: 1rem;
-            color: #86868b;
+            color: #a0a0b0;
             font-weight: 400;
+            text-shadow: none;
         }
 
         .price-card p {
-            color: #86868b;
+            color: #a0a0b0;
             font-size: 0.95rem;
         }
 
@@ -162,17 +193,19 @@
         }
 
         .node-item {
-            background: rgba(0, 0, 0, 0.02);
+            background: rgba(40, 40, 60, 0.4);
             border-radius: 12px;
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 14px;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 212, 255, 0.05);
         }
 
         .node-item:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
         }
 
         .node-flag {
@@ -183,12 +216,12 @@
             font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 4px;
-            color: #1d1d1f;
+            color: #ffffff;
         }
 
         .node-info p {
             font-size: 0.9rem;
-            color: #86868b;
+            color: #a0a0b0;
         }
 
         /* 下载和联系 */
@@ -199,42 +232,44 @@
         }
 
         .download-item, .contact-item {
-            background: rgba(0, 0, 0, 0.02);
+            background: rgba(40, 40, 60, 0.4);
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            transition: background 0.2s ease;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(0, 212, 255, 0.05);
         }
 
         .download-item:hover, .contact-item:hover {
-            background: rgba(0, 0, 0, 0.04);
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
         }
 
         .download-item h4, .contact-item h4 {
             font-size: 1.05rem;
             font-weight: 600;
             margin-bottom: 10px;
-            color: #1d1d1f;
+            color: #ffffff;
         }
 
         .download-item p, .contact-item p {
-            color: #86868b;
+            color: #a0a0b0;
             font-size: 0.9rem;
             line-height: 1.6;
         }
 
         /* 免责声明 */
         .disclaimer {
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(30, 30, 50, 0.5);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 20px;
             font-size: 0.85rem;
-            color: #86868b;
+            color: #808090;
             text-align: center;
             margin-top: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 212, 255, 0.05);
             line-height: 1.8;
         }
 
