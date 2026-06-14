@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumina</title>
+<title>Lumina VPN</title>
 
 <style>
 *{
@@ -13,83 +13,157 @@ box-sizing:border-box;
 }
 
 body{
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:linear-gradient(180deg,#050816,#0f1c35);
-color:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top left,#0a84ff33,transparent 40%),
+radial-gradient(circle at bottom right,#30d15822,transparent 40%);
+z-index:-1;
 }
 
 .nav{
-position:sticky;
-top:0;
-padding:16px 24px;
-background:rgba(255,255,255,.06);
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:1200px;
+padding:15px 25px;
+background:rgba(255,255,255,.08);
 backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
 }
 
 .hero{
-padding:100px 20px;
+padding-top:180px;
 text-align:center;
 }
 
 .hero h1{
-font-size:56px;
-margin-bottom:15px;
+font-size:70px;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero p{
-color:#b8c2d6;
-font-size:20px;
+font-size:24px;
+color:#999;
 }
 
 .btn{
-margin-top:25px;
-padding:14px 28px;
-border:none;
-border-radius:999px;
+display:inline-block;
+margin-top:40px;
+padding:18px 40px;
 background:#0a84ff;
 color:white;
-font-size:16px;
-cursor:pointer;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:.3s;
 }
 
-#qqBox{
-display:none;
-max-width:500px;
-margin:25px auto;
-padding:20px;
-background:rgba(255,255,255,.08);
-border-radius:20px;
+.btn:hover{
+transform:translateY(-5px);
 }
 
 .section{
-max-width:1100px;
+max-width:1200px;
 margin:auto;
-padding:60px 20px;
+padding:100px 20px;
 }
 
 .title{
+font-size:50px;
 text-align:center;
-margin-bottom:30px;
+margin-bottom:60px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 .card{
-background:rgba(255,255,255,.06);
-padding:24px;
-border-radius:24px;
-backdrop-filter:blur(12px);
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border-radius:25px;
+padding:30px;
+transition:.3s;
 }
 
-.footer{
-padding:40px 20px;
-text-align:center;
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:15px;
+}
+
+.card p{
 color:#aaa;
+}
+
+.price{
+text-align:center;
+font-size:50px;
+font-weight:bold;
+color:#0a84ff;
+margin:20px 0;
+}
+
+.contact{
+text-align:center;
+font-size:24px;
+line-height:2;
+}
+
+.notice{
+margin-top:60px;
+padding:25px;
+background:#111;
+border-radius:20px;
+color:#999;
+line-height:2;
+font-size:14px;
+}
+
+footer{
+text-align:center;
+padding:50px 20px;
+color:#666;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:50px;
+}
+
+.title{
+font-size:36px;
+}
+
 }
 </style>
 </head>
@@ -97,100 +171,152 @@ color:#aaa;
 <body>
 
 <div class="nav">
-🚀 Lumina
+<div class="logo">🚀 Lumina VPN</div>
+<div>Premium Network</div>
 </div>
 
 <section class="hero">
 
-<h1>Lumina</h1>
+<h1>重新定义网络体验</h1>
 
 <p>
 高速 · 稳定 · 安全
 </p>
 
-<button class="btn" onclick="toggleQQ()">
-联系客服
-</button>
-
-<div id="qqBox">
-<p>客服QQ：730733379</p>
-<br>
-<p>代理合作QQ：1815500285</p>
-<br>
-<p>长按或复制QQ号添加好友</p>
-</div>
+<a href="#contact" class="btn">
+联系客服QQ
+</a>
 
 </section>
 
 <section class="section">
 
-<h2 class="title">🌍 节点地区</h2>
+<h2 class="title">
+🌍 全球节点
+</h2>
 
 <div class="grid">
-
-<div class="card">🇺🇸 美国</div>
-<div class="card">🇯🇵 日本</div>
-<div class="card">🇭🇰 香港</div>
-<div class="card">🇸🇬 新加坡</div>
-<div class="card">🇦🇺 澳大利亚</div>
-<div class="card">🇮🇳 印度</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">📱 平台支持</h2>
-
-<div class="grid">
-
-<div class="card">iOS</div>
-<div class="card">Android</div>
-<div class="card">Windows</div>
-<div class="card">macOS</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">ℹ️ 服务特点</h2>
-
-<div class="grid">
-
-<div class="card">多地区节点</div>
-<div class="card">多平台支持</div>
-<div class="card">稳定连接体验</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">声明</h2>
 
 <div class="card">
-本站内容仅用于品牌展示与信息介绍，请遵守当地法律法规使用相关服务。
+<h3>🇺🇸 美国</h3>
+<p>高速流媒体线路</p>
+</div>
+
+<div class="card">
+<h3>🇯🇵 日本</h3>
+<p>低延迟游戏线路</p>
+</div>
+
+<div class="card">
+<h3>🇭🇰 香港</h3>
+<p>稳定商务线路</p>
+</div>
+
+<div class="card">
+<h3>🇸🇬 新加坡</h3>
+<p>亚洲优化节点</p>
+</div>
+
+<div class="card">
+<h3>🇦🇺 澳大利亚</h3>
+<p>国际专线</p>
+</div>
+
+<div class="card">
+<h3>🇮🇳 印度</h3>
+<p>高速接入线路</p>
+</div>
+
 </div>
 
 </section>
 
-<div class="footer">
-© 2025 Lumina
+<section class="section">
+
+<h2 class="title">
+📱 客户端下载
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>iOS</h3>
+<p>Shadowrocket</p>
+<p>下载方式请联系QQ获取</p>
 </div>
 
-<script>
-function toggleQQ(){
-const box=document.getElementById("qqBox");
-box.style.display=
-box.style.display==="block"
-? "none"
-: "block";
-}
-</script>
+<div class="card">
+<h3>Android</h3>
+<p>Clash</p>
+<p>下载方式请联系QQ获取</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">
+💰 套餐价格
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>月付套餐</h3>
+<div class="price">¥12</div>
+</div>
+
+<div class="card">
+<h3>半年套餐</h3>
+<div class="price">¥25</div>
+</div>
+
+<div class="card">
+<h3>年付套餐</h3>
+<div class="price">¥40</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<h2 class="title">
+📞 联系方式
+</h2>
+
+<div class="contact">
+
+客服QQ：730733379
+
+<br><br>
+
+代理合作QQ：1815500285
+
+</div>
+
+<div class="notice">
+
+本站严禁未成年人充值以及消费。<br>
+
+所售商品均仅限个人测试使用。<br>
+
+严禁用于商业用途与违法行为。<br>
+
+由此带来的一切法律风险及责任均由用户自行承担。
+
+</div>
+
+</section>
+
+<footer>
+
+© 2025 Lumina VPN
+
+</footer>
 
 </body>
 </html>
